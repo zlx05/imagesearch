@@ -1,0 +1,19 @@
+# llmscrapy — LLM-powered web scraper
+# Python >= 3.10
+
+# Core
+pydantic>=2.0
+python-dotenv>=1.0
+
+# HTTP
+requests>=2.28
+
+# HTML parsing
+beautifulsoup4>=4.11
+lxml>=4.9
+
+# LLM (OpenAI-compatible SDK for DeepSeek)
+openai>=1.0
+
+# Optional: Playwright for JS-rendered pages
+# playwright>=1.40

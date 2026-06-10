@@ -1,0 +1,6 @@
+[server]
+address = "0.0.0.0"
+maxMessageSize = 1000
+
+[browser]
+serverAddress = "127.0.0.1"

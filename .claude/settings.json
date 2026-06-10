@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(python -m pip install --force-reinstall torch torchvision --index-url https://download.pytorch.org/whl/cpu 2>&1)",
+      "PowerShell(python -m pip install rapidocr-onnxruntime -q 2>&1)",
+      "PowerShell(python -c \"from rapidocr_onnxruntime import RapidOCR; print\\('rapidocr OK'\\)\" 2>&1)",
+      "PowerShell(winget install --id=UB-Mannheim.TesseractOCR -e --accept-package-agreements --accept-source-agreements 2>&1)",
+      "Read(//c/Program Files/Tesseract-OCR/**)",
+      "PowerShell(& \"C:\\\\Program Files\\\\Tesseract-OCR\\\\tesseract.exe\" --list-langs 2>&1)",
+      "PowerShell(Invoke-WebRequest -Uri \"https://github.com/tesseract-ocr/tessdata/raw/main/chi_sim.traineddata\" -OutFile \"$env:TEMP\\\\chi_sim.traineddata\" 2>&1; echo \"Downloaded\"; Start-Process powershell -Verb RunAs -ArgumentList \"-Command\", \"Copy-Item '$env:TEMP\\\\chi_sim.traineddata' 'C:\\\\Program Files\\\\Tesseract-OCR\\\\tessdata\\\\chi_sim.traineddata'\" -Wait 2>&1; echo \"Copied\")",
+      "PowerShell(Start-Process powershell -Verb RunAs -ArgumentList \"-Command\", \"Copy-Item '$env:TEMP\\\\chi_sim.traineddata' 'C:\\\\Program Files\\\\Tesseract-OCR\\\\tessdata\\\\chi_sim.traineddata' -Force; Write-Host 'Done'\" -Wait 2>&1; Test-Path \"C:\\\\Program Files\\\\Tesseract-OCR\\\\tessdata\\\\chi_sim.traineddata\")",
+      "PowerShell(python -c \"import pytesseract; pytesseract.pytesseract.tesseract_cmd=r'C:\\\\Program Files\\\\Tesseract-OCR\\\\tesseract.exe'; from PIL import Image; print\\('pytesseract OK'\\)\" 2>&1)",
+      "PowerShell(python -m pip install ddgs -q 2>&1)",
+      "PowerShell(python -c \"from ddgs import DDGS; print\\('ddgs OK'\\)\" 2>&1)",
+      "PowerShell(python -c \"import sys; sys.path.insert\\(0, r'C:\\\\Users\\\\14341\\\\image_agenttt'\\); from test_ocr_keyword_search_ui import ocr_extract, ocr_to_keywords, ddg_search_platforms; print\\('UI modules OK'\\)\" 2>&1)",
+      "PowerShell(pip show streamlit 2>&1)",
+      "PowerShell(conda info --envs 2>$null)",
+      "PowerShell(python -m pip install streamlit -q 2>&1)",
+      "PowerShell(python -c \"import py_compile; py_compile.compile\\(r'C:\\\\Users\\\\14341\\\\image_agenttt\\\\test_ocr_keyword_search_ui.py', doraise=True\\); print\\('Syntax OK'\\)\" 2>&1)",
+      "PowerShell(cd \"C:\\\\Users\\\\14341\\\\image_agenttt\"; Write-Output \"CWD: $\\(Get-Location\\)\"; Write-Output \"Exists: $\\(Test-Path 'data\\\\uploads\\\\______20260513182013.jpg'\\)\")",
+      "Read(//c/Users/14341/image_agenttt/data/uploads/**)",
+      "WebFetch(domain:www.sourcepulse.org)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\14341\\\\image_agenttt\\\\_union_search_temp\" | ForEach-Object { $_.Name })",
+      "PowerShell(conda activate pic_image)",
+      "PowerShell(python -c \"import PicImageSearch; print\\('PicImageSearch OK'\\)\" 2>&1)",
+      "PowerShell(& \"D:\\\\mnist_data\\\\ancanda\\\\envs\\\\pic_image\\\\python.exe\" -c \"import PicImageSearch; print\\('PicImageSearch OK'\\)\" 2>&1)",
+      "PowerShell(& \"D:\\\\mnist_data\\\\ancanda\\\\envs\\\\pic_image\\\\python.exe\" -c \"import streamlit; print\\('streamlit', streamlit.__version__\\)\" 2>&1)",
+      "PowerShell(& \"D:\\\\mnist_data\\\\ancanda\\\\envs\\\\pic_image\\\\python.exe\" -c \"import PIL; print\\('PIL OK'\\)\" 2>&1)",
+      "PowerShell(& \"D:\\\\mnist_data\\\\ancanda\\\\envs\\\\image_agent\\\\python.exe\" -c \"import PicImageSearch; print\\('OK'\\)\" 2>&1)",
+      "PowerShell(D:\\\\mnist_data\\\\ancanda\\\\envs\\\\image_agent\\\\python.exe -c \"import ast; ast.parse\\(open\\(r'c:\\\\Users\\\\14341\\\\image_agenttt\\\\test_retriever_ui.py', encoding='utf-8'\\).read\\(\\)\\); print\\('Test file OK'\\); import requests; print\\('requests OK'\\)\")"
+    ],
+    "additionalDirectories": [
+      "C:\\Program Files\\Tesseract-OCR\\tessdata"
+    ]
+  }
+}

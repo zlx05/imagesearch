@@ -1,0 +1,14 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local debug 
+
+.env
+.venv/
+*.log
+debug_nodes.json
+analyzer_mermaid_preview.html
+data/
+output/

@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(python -m py_compile agents/retriever.py)",
+      "PowerShell(python -m py_compile app.py)",
+      "PowerShell(if \\($?\\) { \"retriever OK\" })",
+      "PowerShell(if \\($?\\) { \"app OK\" })",
+      "PowerShell(if \\($?\\) { \"OK\" })",
+      "PowerShell(python -m py_compile agents/analyzer.py)",
+      "PowerShell(python -m py_compile agents/orchestrator.py)",
+      "PowerShell(if \\($?\\) { \"analyzer OK\" })",
+      "PowerShell(if \\($?\\) { \"orchestrator OK\" })"
+    ]
+  }
+}
