@@ -7,6 +7,8 @@ __pycache__/
 
 .env
 .venv/
+.claude/
+.vscode/
 *.log
 debug_nodes.json
 analyzer_mermaid_preview.html
